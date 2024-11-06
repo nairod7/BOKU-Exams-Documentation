@@ -1,0 +1,5 @@
+---
+title: "FAQ"
+---
+
+This will describe frequently asked questions and common mistakes.

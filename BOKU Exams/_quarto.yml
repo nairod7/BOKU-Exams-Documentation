@@ -3,6 +3,11 @@ project:
 
 website:
   title: "BOKU Exams"
+  page-footer:
+    center: "<b>This documenation is currently in development and not complete. </b>"
+    background: info
+    
+
   sidebar:
     style: "docked"
     background: light
@@ -13,10 +18,37 @@ website:
         text: Home
       - href: ideas.qmd
         text: Ideas
+      - href: first-steps.qmd
+        text: First Steps 
+      - href: r-exams.qmd
+        text: R/exams Info
+      
       - section: Rmd-file
         contents: 
         - href: structure-Rmd.qmd
           text: Structure
+        - href: conversion.qmd
+          text: Conversion of .Rmd-file 
+          
+      - section: Add-ons 
+        contents: 
+        - href: add-ons.qmd
+          text: Add-ons to .Rmd-files
+            
+      - href: faq.qmd 
+        text: FAQ
+        
+        
+        
+        
+        
+    tools:
+    - icon: github
+      menu:
+        - text: Source Code
+          href: https://github.com/boku-stat/BOKU-Exams-Documentation
+        - text: Provide Feedback
+          href: https://github.com/boku-stat/BOKU-Exams-Documentation/discussions
       
 
 format:
