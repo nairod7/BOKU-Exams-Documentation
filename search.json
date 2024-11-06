@@ -7,6 +7,13 @@
     "text": "This is the page for future ideas and important notes for documentation.\n\nHow to include r markdown chunks (which are not executable)\n\nhttps://quarto.org/docs/authoring/markdown-basics.html#source-code\n\ninclude r chunks with visible settings\norder of chapters/information -> develop structure of website\nFAQ section"
   },
   {
+    "objectID": "conversion.html",
+    "href": "conversion.html",
+    "title": "Conversion of an .Rmd-file",
+    "section": "",
+    "text": "This will describe the process of converting the .Rmd-file to HTML/pdf/Moodle."
+  },
+  {
     "objectID": "structure-Rmd.html",
     "href": "structure-Rmd.html",
     "title": "Structure of an .Rmd-file",
@@ -54,5 +61,33 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "FAQ",
+    "section": "",
+    "text": "This will describe frequently asked questions and common mistakes."
+  },
+  {
+    "objectID": "r-exams.html",
+    "href": "r-exams.html",
+    "title": "R/exams",
+    "section": "",
+    "text": "This will give general information on the R/exams package and links to existing documentation."
+  },
+  {
+    "objectID": "add-ons.html",
+    "href": "add-ons.html",
+    "title": "Add-ons of .Rmd-files",
+    "section": "",
+    "text": "This will describe how to include additional things, e.g: tables, pictures, graphs, csv-files, etc."
+  },
+  {
+    "objectID": "first-steps.html",
+    "href": "first-steps.html",
+    "title": "First Steps",
+    "section": "",
+    "text": "This will give an introduction and simple examples."
   }
 ]
