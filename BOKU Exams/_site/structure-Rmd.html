@@ -420,7 +420,123 @@ mchoice example
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution</h2>
-<p>the Solution part is used to provide the correct solution to a question and display it in the generated output. This part is not used directly for grading but serves as documentation or a reference for review and to explain the answer. It is usefull to document the seed used to generate all the data. This is done by accesing the Seed by ??????? “Seed: r seed”. If your solutions list has “TRUE/FALSE”-vectors, they need to be converted into string.</p>
+<p>The Solution section mainly serves to provide additional explanations or feedback for learners if desired. It is used to display explanations or justifications for the correct answer, which learners can view after completing the exercise. If you don’t need to provide feedback or detailed explanations, you can simply omit the Solution section. This won’t impact the grading, as the grading relies on the meta-information (exsolution, exclozetype, extol). But it is always almost useful to document the seed used to generate all the data.</p>
+<p><strong>Examples</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+seed
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Solution</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">========</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>Seed: <span class="in">`r seed`</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+numeric example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="an">The correct answer is 7 because there are seven recognized continents on Earth:</span><span class="co"> Africa, Antarctica, Asia, Europe, North America, Oceania (or Australia), and South America.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+string example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>The correct answer is "photosynthesis," as this is the process plants use to convert sunlight into energy, which is essential for their growth.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+schoice example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Yes, Vienna is the capital of Austria and is known for its rich cultural heritage and historic significance.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+mchoice example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>The correct answers are "A" and "C." Option A is correct because..., and Option C is correct because... Option B, however, is incorrect because it lacks evidence.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>If you have saved all the needed feedback in the <code>explanation</code>list you can use the <code>answerlist()</code> function again:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>answerlist(unlist(explanations), markup = "markdown")</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to convert the <code>.Rmd</code>-file into a Moodle <code>.xml</code>-file, it is necessary to change the format of every single and multiple choice question from <code>TRUE</code>and <code>FALSE</code> into string for the feedback and into <code>1</code> and <code>0</code>for the solution. This can be done by adding the following code chunks:</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Change the feedback format from a vector of T/F to the strings "True"/"False"</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>explanations &lt;- list()</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>for (x in 1:length(explanations)) {</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  if (types<span class="co">[</span><span class="ot">x</span><span class="co">]</span> == "schoice") {</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    explanations<span class="co">[</span><span class="ot">x</span><span class="co">]</span> &lt;- explanations<span class="co">[</span><span class="ot">x</span><span class="co">]</span> |&gt; lapply(function(x) ifelse(x, "True", "False"))</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  } else {</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    explanations<span class="co">[</span><span class="ot">x</span><span class="co">]</span> &lt;- explanations<span class="co">[</span><span class="ot">x</span><span class="co">]</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Change the solution format from a vector of T/F to a string of 1/0</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>for (x in 1:length(solutions)) {</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  if (types<span class="co">[</span><span class="ot">x</span><span class="co">]</span> %in% c("schoice", "mchoice")) {</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    solutions<span class="co">[</span><span class="ot">x</span><span class="co">]</span> &lt;- solutions<span class="co">[</span><span class="ot">x</span><span class="co">]</span> |&gt;</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>      unlist() |&gt;</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>      mchoice2string()</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="metainformation" class="level2">
 <h2 class="anchored" data-anchor-id="metainformation">MetaInformation</h2>
@@ -430,21 +546,21 @@ mchoice example
 <ul>
 <li><strong>Purpose</strong>: A unique identifier for each exercise. This helps manage and retrieve exercises easily from an exercise pool.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>exname<span class="sc">:</span> <span class="st">"basic_statistics_01"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>exname<span class="sc">:</span> <span class="st">"basic_statistics_01"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="extitle-exercise-title" class="level3">
 <h3 class="anchored" data-anchor-id="extitle-exercise-title">extitle: Exercise Title</h3>
 <ul>
 <li><strong>Purpose</strong>: specifies the exercise’s title, providing a clear identifier that appears in Moodle, exported files, and reports.</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>extitle<span class="sc">:</span> <span class="st">"basic_statistics_01{story_name}"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>extitle<span class="sc">:</span> <span class="st">"basic_statistics_01{story_name}"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="extype-exercise-type" class="level3">
 <h3 class="anchored" data-anchor-id="extype-exercise-type">extype: Exercise Type</h3>
 <ul>
 <li><strong>Purpose</strong>: Specifies the type of exercise. Since we often use mixed question types, the cloze type is commonly used.</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>extype<span class="sc">:</span> cloze</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>extype<span class="sc">:</span> cloze</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exsolution-solution-of-each-part" class="level3">
 <h3 class="anchored" data-anchor-id="exsolution-solution-of-each-part">exsolution: Solution of Each Part</h3>
@@ -452,7 +568,7 @@ mchoice example
 <li><strong>Purpose</strong>: Defines the correct solutions to the exercise. Since in our exercises mostly multiple answers are needed, the different solutions are separated by |.</li>
 </ul>
 <p>Example:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>exsolution<span class="sc">:</span> <span class="dv">42</span><span class="sc">|</span><span class="cn">TRUE</span><span class="sc">|</span><span class="cn">FALSE</span>, <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>exsolution<span class="sc">:</span> <span class="dv">42</span><span class="sc">|</span><span class="cn">TRUE</span><span class="sc">|</span><span class="cn">FALSE</span>, <span class="cn">TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exclozetypes-cloze-subtypes-for-each-part" class="level3">
 <h3 class="anchored" data-anchor-id="exclozetypes-cloze-subtypes-for-each-part">exclozetypes: Cloze Subtypes for Each Part</h3>
@@ -460,7 +576,7 @@ mchoice example
 <li><strong>Purpose</strong>: When using cloze types, define each subtype for the cloze questions based on the types list. If cloze type isn’t used, this parameter is not needed</li>
 </ul>
 <p>Example:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>exclozetypes<span class="sc">:</span> num<span class="sc">|</span>schoice<span class="sc">|</span>mchoice</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>exclozetypes<span class="sc">:</span> num<span class="sc">|</span>schoice<span class="sc">|</span>mchoice</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="extol-tolerance-levels-for-numeric-answers" class="level3">
 <h3 class="anchored" data-anchor-id="extol-tolerance-levels-for-numeric-answers">extol: Tolerance Levels for Numeric Answers</h3>
@@ -468,18 +584,18 @@ mchoice example
 <li><strong>Purpose</strong>: Defines acceptable tolerances for numeric answers, useful for cloze questions with numeric solutions.</li>
 </ul>
 <p>Example:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>extol<span class="sc">:</span> <span class="dv">1</span><span class="sc">|</span><span class="dv">0</span><span class="sc">|</span><span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>extol<span class="sc">:</span> <span class="dv">1</span><span class="sc">|</span><span class="dv">0</span><span class="sc">|</span><span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="putting-it-togheter-and-dynamic-embedding" class="level3">
 <h3 class="anchored" data-anchor-id="putting-it-togheter-and-dynamic-embedding">Putting It Togheter and Dynamic Embedding</h3>
 <p>Here you can see an example of all the needed keyparameter put togheter. Since we have all our needed informations for exsolutions, exclozetype and extol in our lists created in the Data Generation Step, we can also just access them dynamically by by embedding R code within backticks:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exname</span><span class="kw">:</span><span class="at"> name of the exercise</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">extitle</span><span class="kw">:</span><span class="at"> titel of the exercise</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">extype</span><span class="kw">:</span><span class="at"> cloze</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">exsolution</span><span class="kw">:</span><span class="at"> `r paste(solutions, collapse = "|")`</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">exclozetype</span><span class="kw">:</span><span class="at"> `r paste(types, collapse = "|")`</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">extol</span><span class="kw">:</span><span class="at"> `r paste(tolerances, collapse = "|")`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exname</span><span class="kw">:</span><span class="at"> name of the exercise</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">extitle</span><span class="kw">:</span><span class="at"> titel of the exercise</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">extype</span><span class="kw">:</span><span class="at"> cloze</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">exsolution</span><span class="kw">:</span><span class="at"> `r paste(solutions, collapse = "|")`</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">exclozetype</span><span class="kw">:</span><span class="at"> `r paste(types, collapse = "|")`</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">extol</span><span class="kw">:</span><span class="at"> `r paste(tolerances, collapse = "|")`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

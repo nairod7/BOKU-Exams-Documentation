@@ -149,7 +149,79 @@ answerlist(unlist(questions), markup = "markdown")
 
 ## Solution
 
-the Solution part is used to provide the correct solution to a question and display it in the generated output. This part is not used directly for grading but serves as documentation or a reference for review and to explain the answer. It is usefull to document the seed used to generate all the data. This is done by accesing the Seed by ??????? "Seed: r seed". If your solutions list has "TRUE/FALSE"-vectors, they need to be converted into string.
+The Solution section mainly serves to provide additional explanations or feedback for learners if desired. It is used to display explanations or justifications for the correct answer, which learners can view after completing the exercise. If you don’t need to provide feedback or detailed explanations, you can simply omit the Solution section. This won’t impact the grading, as the grading relies on the meta-information (exsolution, exclozetype, extol). But it is always almost useful to document the seed used to generate all the data. 
+
+**Examples** 
+
+::: callout-tip
+### seed
+```{markdown}
+Solution
+========
+Seed: `r seed` 
+```
+:::
+
+::: callout-tip
+### numeric example
+```{markdown}
+The correct answer is 7 because there are seven recognized continents on Earth: Africa, Antarctica, Asia, Europe, North America, Oceania (or Australia), and South America.
+```
+:::
+
+::: callout-tip
+### string example
+```{markdown}
+The correct answer is "photosynthesis," as this is the process plants use to convert sunlight into energy, which is essential for their growth.
+```
+:::
+
+::: callout-tip
+### schoice example
+```{markdown}
+Yes, Vienna is the capital of Austria and is known for its rich cultural heritage and historic significance.
+```
+:::
+
+::: callout-tip
+### mchoice example
+```{markdown}
+The correct answers are "A" and "C." Option A is correct because..., and Option C is correct because... Option B, however, is incorrect because it lacks evidence.
+```
+:::
+
+If you have saved all the needed feedback in the `explanation`list you can use the `answerlist()` function again:
+```{markdown}
+answerlist(unlist(explanations), markup = "markdown")
+```
+
+
+::: callout-warning
+If you want to convert the `.Rmd`-file into a Moodle `.xml`-file, it is necessary to change the format of every single and multiple choice question from `TRUE`and `FALSE` into string for the feedback and into `1` and `0`for the solution. This can be done by adding the following code chunks:
+:::
+
+```{markdown}
+# Change the feedback format from a vector of T/F to the strings "True"/"False"
+explanations <- list()
+for (x in 1:length(explanations)) {
+  if (types[x] == "schoice") {
+    explanations[x] <- explanations[x] |> lapply(function(x) ifelse(x, "True", "False"))
+  } else {
+    explanations[x] <- explanations[x]
+  }
+}
+```
+
+```{markdown}
+# Change the solution format from a vector of T/F to a string of 1/0
+for (x in 1:length(solutions)) {
+  if (types[x] %in% c("schoice", "mchoice")) {
+    solutions[x] <- solutions[x] |>
+      unlist() |>
+      mchoice2string()
+  }
+}
+```
 
 ## MetaInformation
 
