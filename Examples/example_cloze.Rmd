@@ -1,0 +1,113 @@
+---
+title: "example_cloze"
+author: "Dorian"
+date: "2024-11-15"
+output: html
+---
+
+```{r data generation, echo = FALSE, results = "hide"}
+mm_o <- 16  # Molar mass of oxygen in g/mol
+moles <- 10  # Given moles of water
+mass_o <- moles * m_o
+```
+
+```{r answers/solutions, echo = FALSE, results = "hide"}
+# Initialize lists for the questions, answers, solutions, types, explanations, and tolerances
+answers <- list()
+solutions <- list()
+types <- list()
+explanations <- list()
+tolerances <- list()
+
+# Define Question 1: Numeric
+# Mass of oxygen?
+answers[[1]] <- ""  # No predefined answer for numeric questions
+solutions[[1]] <- mass_o  # Correct answer: 8 protons
+types[[1]] <- "num"
+explanations[[1]] <- "The mass of oxygen is calculated by multiplying the number of moles by the molar mass of oxygen. For 10 moles of water, it is 10 * 16 = 160 g."
+tolerances[[1]] <- 0  # No tolerance for numeric answer
+
+# Define Question 2: String
+# What is the chemical symbol for oxygen?
+answers[[2]] <- ""  # No predefined answer for string questions
+solutions[[2]] <- "O"  # Correct answer: O
+types[[2]] <- "string"
+explanations[[2]] <- "The chemical symbol for oxygen is 'O'."
+tolerances[[2]] <- 0
+
+# Define Question 3: Single Choice
+# To which group does oxygen belong in the periodic table?
+answers[[3]] <- c("Noble gases", "Halogens", "Chalcogens", "Alkali metals")
+solutions[[3]] <- c(FALSE, FALSE, TRUE, FALSE)  # Correct answer: Chalcogens
+types[[3]] <- "schoice"
+explanations[[3]] <- solutions[[3]]
+tolerances[[3]] <- 0
+
+# Define Question 4: Multiple Choice
+# In which of the following compounds is oxygen present?
+answers[[4]] <- c("Water", "Carbon dioxide", "Methane", "Sulfur dioxide")
+solutions[[4]] <- c(TRUE, TRUE, FALSE, TRUE)  # Correct answers: H2O, CO2, SO2
+types[[4]] <- "mchoice"
+explanations[[4]] <- c("H2O", "CO2", "SO2", "CH4")
+tolerances[[4]] <- 0
+
+```
+
+Question
+========
+
+*Questions 1*
+
+Calculate the mass of oxygen in 10 moles of water (H₂O). The molar mass of oxygen is 16 g/mol.
+##ANSWER1##
+
+*Question 2*
+
+What is the chemical symbol for oxygen?
+
+##ANSWER2##
+
+*Question 3*
+
+To which group does oxygen belong in the periodic table?
+
+##ANSWER3##
+
+*Question 4*
+
+In which of the following compounds is oxygen present?
+
+##ANSWER4##
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(unlist(answers), markup = "markdown")
+```
+
+Solution
+========
+```{r solutionlist, echo = FALSE, results = "asis"}
+# Convert solutions to "True" or "False"
+explanations[3] <- lapply(explanations[3], function(x) ifelse(x, "True", "False"))
+
+for (x in 1:length(solutions)) {
+  if (types[x] %in% c("schoice", "mchoice")) {
+    solutions[x] <- solutions[x] |>
+      unlist() |>
+      mchoice2string()
+  }
+}
+
+# Display explanations
+answerlist(unlist(explanations), markup = "markdown")
+```
+
+Meta-information
+================
+exname: example_cloze
+extitle: oxygen in chemistry 
+extype: cloze
+exsolution: `r paste(solutions, collapse = "|")`
+exclozetype: `r paste(types, collapse = "|")`
+extol: `r paste(tolerances, collapse = "|")`
+exshuffle: TRUE
+exversion: v1

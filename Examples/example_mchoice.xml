@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/example_mchoice/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q1 : metalls and metalloids </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p><em>Questions 1</em></p>
+<p>Which of the following elements are metals?</p>
+<p>{1:MULTIRESPONSE:%-50%Oxygen (O)~=Iron (Fe)~%-50%Nitrogen (N)~=Aluminium (Al)}</p>
+<p><em>Question 2</em></p>
+<p>Which of the following elements are metalloids?</p>
+<p>{1:MULTIRESPONSE:=Silicon (Si)~%-50%Helium (He)~=Boron (B)~=Arsenic (As)}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><em>Solution 1</em></p>
+<p>Iron (Fe) and Aluminium (Al) are metals, while Oxygen (O) and Nitrogen (N) are gases.</p>
+<p><em>Solution 2</em></p>
+<p>Silicon (Si), Boron (B), and Arsenic (As) are metalloids. Helium (He) is a noble gas.</p>
+<ul>
+<li> False / True / False / True </li>
+<li> True / False / True / True </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+</quiz>

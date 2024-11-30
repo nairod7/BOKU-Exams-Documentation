@@ -85,12 +85,6 @@ answers[[6]] <- c("Weight would be higher", "Weight would be lower")
 type[[6]] <- "schoice"
 solutions[[6]] <- explanations[[6]] <- c((rhoF > rhoW), (rhoF < rhoW))
 tolerances[[6]] <- 0
-
-# Add dollar signs for negative values in explanations for questions 1-5
-if(any(explanations[c(1,2,3,4,5)] < 0)) {
-  explanations[c(1,2,3,4,5)] <- lapply(solutions[c(1,2,3,4,5)], function(x) paste("$", x, "$", sep = ""))
-}
-
 ```
 
 Question
@@ -120,7 +114,7 @@ knitr::include_graphics("B1_figure.png")
 
 
 ```{r questionlist, echo = FALSE, results = "asis"}
-answerlist(paste(unlist(questions), ".", sep=""))
+answerlist(paste(unlist(answers), ".", sep=""))
 ```
 
 Solution 
@@ -144,6 +138,11 @@ The solution to the system of equations gives the volumes:
 
 
 ```{r solutionlist, echo = FALSE, results = "asis"}
+# Add dollar signs for negative values in explanations for questions 1-5
+if(any(explanations[c(1,2,3,4,5)] < 0)) {
+  explanations[c(1,2,3,4,5)] <- lapply(solutions[c(1,2,3,4,5)], function(x) paste("$", x, "$", sep = ""))
+}
+
 # Convert solutions for question 6 to "True" or "False"
 explanations[6] <- lapply(solutions[6], function(x) ifelse(x, "True", "False"))
 solutions[6] <- lapply(solutions[6], mchoice2string)
